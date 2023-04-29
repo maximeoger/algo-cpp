@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-bool isInteger(string str) {
-  for(int i = 0; i <= str.length() - 1; i++) {
+bool isNumeric(string str) {
+  for (int i = 0; i < str.length(); i++) {
     if(isdigit(str[i]) == false) {
       return false;
     }
@@ -10,30 +10,18 @@ bool isInteger(string str) {
   return true;
 }
 
-bool checkArgs(char* args[]) {
-  if (
-    (!isInteger(args[1])) ||
-    (!isInteger(args[2])) ||
-    (args[1] > args[2])
-  ) return false;
-  return true;
-}
-
 int main (int argc, char* argv[]) {
-
-  if(argc == 1 || argc > 3 || checkArgs(argv) == false) {
-    cerr << "erreur." << endl;
+  if(argc == 1 || !isNumeric(argv[1])) {
+    cerr << "Tu ne me la mettras pas a l'envers." << endl;
     return 1;
   }
 
-  int first = atoi(argv[1]);
-  int second = atoi(argv[2]);
+  int num = atoi(argv[1]);
 
-  int result =  first / second;
-  int remainder = first % second;
-
-  cout << "resultat: " << result << endl;
-  cout << "reste: " << remainder << endl;
-
+  if( (num % 2) == 0) {
+    cout << "pair" << endl;
+  } else {
+    cout << "impair" << endl;
+  }
   return 0;
 }

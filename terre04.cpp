@@ -1,27 +1,25 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
-bool isNumeric(string str) {
-  for (int i = 0; i < str.length(); i++) {
-    if(isdigit(str[i]) == false) {
-      return false;
-    }
-  }
-  return true;
-}
-
 int main (int argc, char* argv[]) {
-  if(argc == 1 || !isNumeric(argv[1])) {
-    cerr << "Tu ne me la mettras pas a l'envers." << endl;
+  if (argc < 2 ) {
+    cerr << "Veuillez entrer une lettre de l'alphabet (a-z) en minuscule." << endl;
     return 1;
   }
 
-  int num = atoi(argv[1]);
+  char c = argv[1][0];
+  int asciiValue = c;
 
-  if( (num % 2) == 0) {
-    cout << "pair" << endl;
-  } else {
-    cout << "impair" << endl;
+  if(asciiValue < 97 || asciiValue > 122) {
+    cerr << "Veuillez entrez une lettre entre a et z en minuscule." << endl;
+    return 1;
   }
+
+  for (int i=asciiValue; i <= 122; i++) {
+    cout << char(i);
+  }
+
+  cout << endl;
   return 0;
 }

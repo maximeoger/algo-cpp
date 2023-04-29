@@ -1,26 +1,39 @@
 #include <iostream>
 using namespace std;
 
-int main(int argc, char* argv[]) {
+bool isInteger(string str) {
+  for(int i = 0; i <= str.length() - 1; i++) {
+    if(isdigit(str[i]) == false) {
+      return false;
+    }
+  }
+  return true;
+}
 
-  if(argc == 1) {
-    cerr << "Veuillez entrez une chaine de caractere" << endl;
+bool checkArgs(char* args[]) {
+  if (
+    (!isInteger(args[1])) ||
+    (!isInteger(args[2])) ||
+    (args[1] > args[2])
+  ) return false;
+  return true;
+}
+
+int main (int argc, char* argv[]) {
+
+  if(argc == 1 || argc > 3 || checkArgs(argv) == false) {
+    cerr << "erreur." << endl;
     return 1;
   }
 
-  string str = "";
-  
-  for(int i=argc - 1; i>=1; i--) {
-    for(int j=(string(argv[i]).length() - 1); j>=0; j--) {
-      string space = "";
-      if(j == 0) {
-        space = " ";
-      }
-      str = str + string(argv[i])[j] + space;
-    }
-  }
+  int first = atoi(argv[1]);
+  int second = atoi(argv[2]);
 
-  cout << str << endl;
-  
+  int result =  first / second;
+  int remainder = first % second;
+
+  cout << "resultat: " << result << endl;
+  cout << "reste: " << remainder << endl;
+
   return 0;
 }
