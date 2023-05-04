@@ -2,6 +2,11 @@
 #include <math.h>
 using namespace std;
 
+/*
+  Racine carrée d'un nombre : 
+  Affiche la racine carrée d'un entier positif
+*/
+
 int main (int argc, char* argv[]) {
   if(argc == 1) {
     cerr << "Veuillez entrer un nombre." << endl;
@@ -24,4 +29,5 @@ int main (int argc, char* argv[]) {
 
   cout << result << endl;
   
+  return 0;
 }

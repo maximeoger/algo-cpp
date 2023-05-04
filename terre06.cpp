@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+  Divisions : 
+  Affiche le résultat et le reste d'une division.
+*/
+
 bool isInteger(string str) {
   for(int i = 0; i <= str.length() - 1; i++) {
     if(isdigit(str[i]) == false) {

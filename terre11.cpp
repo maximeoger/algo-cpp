@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// Savoir si l'entier passé en paramètre est un noombre premier (si il adment uniquement 2 diviseurs : 1 et lui même)
+/*
+  Nombre premier : 
+
+  Savoir si un nombre est premier ou pas
+*/
 
 bool isPrimeNumber (int num) {
   int dividers = 0;

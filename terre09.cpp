@@ -2,6 +2,11 @@
 #include <math.h>
 using namespace std;
 
+/*
+  Puissance d'un noombre : 
+  Affiche la puissance d'un nombre
+*/
+
 int main (int argc, char* argv[]) {
   if(argc == 1 || argc < 3) {
     cerr << "Veuillez entrer un nombre en premier argument et une puissance en second argument." << endl;

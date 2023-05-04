@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+  Pair ou impair : 
+  Affiche si l'argument est un entier pair ou impair.
+*/
+
 bool isNumeric(string str) {
   for (int i = 0; i < str.length(); i++) {
     if(isdigit(str[i]) == false) {

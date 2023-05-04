@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+  Taille d'une chaine : 
+  Affiche la taille de la chaine de caractère pasée en argument
+*/
+
 int main(int argc, char* argv[]) {
   if(
     argc > 2 || 

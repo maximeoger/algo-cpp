@@ -2,6 +2,11 @@
 #include <cstdlib>
 using namespace std;
 
+/*
+  L'alphabet à partir de : 
+  Affiche l'alphabet à partir de la lettre passée en argument.
+*/
+
 int main (int argc, char* argv[]) {
   if (argc < 2 ) {
     cerr << "Veuillez entrer une lettre de l'alphabet (a-z) en minuscule." << endl;
