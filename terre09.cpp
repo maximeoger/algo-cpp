@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-  Puissance d'un noombre : 
+  Puissance d'un nombre : 
   Affiche la puissance d'un nombre
 */
 
