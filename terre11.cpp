@@ -3,7 +3,6 @@ using namespace std;
 
 /*
   Nombre premier : 
-
   Savoir si un nombre est premier ou pas
 */
 
@@ -31,8 +30,6 @@ int main (int argc, char* argv[]) {
   }
 
   int number = atoi(argv[1]);
-
-  cout << (number % number) << endl;
 
   if(number < 2) {
     cout << "Non, " << number << " n'est pas un nombre premier." << endl;
