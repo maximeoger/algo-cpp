@@ -2,6 +2,11 @@
 
 using namespace std;
 
+/*
+  Trouver la suisse : 
+  Afficher la valeur du milieu d'une liste d'entiers non triés
+*/
+
 int main (int argc, char* argv[]){
   
   int low, mid, high, temp;
@@ -43,7 +48,7 @@ int main (int argc, char* argv[]){
     }
   }
 
-  // trouver le millieu
+  // trouver le milieu
   for(int i=0; i<3; i++) {
     if(p[i] != high && p[i] != low) {
       mid = p[i];
