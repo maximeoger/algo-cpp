@@ -27,8 +27,9 @@ int main (int argc, char* argv[]){
     if(p[i] <= temp) {
       low = p[i];
     }
-    temp = p[i];
-    cout << i << " - low: " << low << endl;
+    if(p[i] < temp) {
+      temp = p[i];
+    }
   }
 
   // trouver le plus grand
@@ -37,18 +38,18 @@ int main (int argc, char* argv[]){
     if(p[i] >= temp) {
       high = p[i];
     }
-    temp = p[i];
-  }
-
-  //cout << "low: " << low << "high: " << high << endl; 
-  // trouver le millieu
-  for(int i=0; i<3; i++) {
-    cout << p[i] << endl;
-    if(p[i] < high && p[i] > low) {
-      mid = p[i];
+    if(p[i] > temp) {
+      temp = p[i];
     }
   }
 
+  // trouver le millieu
+  for(int i=0; i<3; i++) {
+    if(p[i] != high && p[i] != low) {
+      mid = p[i];
+    }
+  }
+  
   cout << mid << endl;
 
   return 0;
