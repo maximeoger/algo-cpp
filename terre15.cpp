@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/*
+  Triée ou pas : 
+  Determine si une liste d'entiers est triée ou pas
+*/
+
 int main(int argc, char* argv[]) {
   int count = argc - 1;
   vector<int> args;
