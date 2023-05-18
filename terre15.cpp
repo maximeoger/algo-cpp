@@ -1,41 +1,48 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
-  int argCount = (argc - 1);
-  int args[argCount]; 
+  int count = argc - 1;
+  vector<int> args;
 
-  if(argCount < 2) {
+  if(argc < 3) {
     cerr << "erreur." << endl;
     return 1;
   }
 
-  for(int i=0; i<=argCount; i++) {
-    // ne pas push le premier index de argv dans arg
-    if(i==0) { continue; }
-    args[i-1] = atoi(argv[i]); // pb -> args se retrouve avec un 0 à l'intérieur (voir l'utilisation de vecteurs plutot)
+  for(int i=1; i<=count; i++) {
+    args.push_back(atoi(argv[i]));
   }
 
   bool sorted = false;
 
-  for(int i=0; i<=argCount; i++) {
-   bool isLastDigit = (i==argCount);
+  for(int i=0; i<count; i++) {
+    bool isLastDigit = i==(count-1);
+    bool isFirstDigit = i==0;
+    
+    if( isFirstDigit && !(args[i] < args[i+1]) ) {
+      cout << "Pas triée !" << "\n";
+      return 0;
+    } 
 
-   if( (false == isLastDigit) && (args[i] < args[i+1]) ) {
-    sorted = true;
-   } else {
-    sorted = false;
-   }
+    if( 
+      (false == isLastDigit) && 
+      (false == isFirstDigit) && 
+      (args[i] > args[i+1]) || (args[i] < args[i-1]) )
+    {
+      cout << "Pas triée !" << "\n";
+      return 0;
+    }
 
-   if( isLastDigit && (args[i] > args[i-1]) ) {
-    sorted = true;
-   } else {
-    sorted = false;
-   }
+    if(isLastDigit && (args[i] < args[i-1]) ) {
+      cout << "Pas triée !" << "\n";
+      return 0;
+    }
   }
 
-  cout << (sorted ? "Triée !" : "Pas triée !") << endl;
+  cout << "Triée !" << "\n";
 
   return 0;
 }
